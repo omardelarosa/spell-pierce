@@ -1,0 +1,162 @@
+---
+// TODO: Adapt social links
+const socials = [
+    {
+        name: 'instagram',
+        url: 'https://www.instagram.com/spell.pierce/',
+        color: 'var(--ctp-sapphire)',
+        icon: `<svg fill="#ffffff" height="800px" width="800px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	 viewBox="-271 273 256 256" xml:space="preserve">
+<path stroke="#ffffff" d="M-64.5,273h-157c-27.3,0-49.5,22.2-49.5,49.5v52.3v104.8c0,27.3,22.2,49.5,49.5,49.5h157c27.3,0,49.5-22.2,49.5-49.5V374.7
+	v-52.3C-15.1,295.2-37.3,273-64.5,273z M-50.3,302.5h5.7v5.6v37.8l-43.3,0.1l-0.1-43.4L-50.3,302.5z M-179.6,374.7
+	c8.2-11.3,21.5-18.8,36.5-18.8s28.3,7.4,36.5,18.8c5.4,7.4,8.5,16.5,8.5,26.3c0,24.8-20.2,45.1-45.1,45.1s-44.9-20.3-44.9-45.1
+	C-188.1,391.2-184.9,382.1-179.6,374.7z M-40,479.5C-40,493-51,504-64.5,504h-157c-13.5,0-24.5-11-24.5-24.5V374.7h38.2
+	c-3.3,8.1-5.2,17-5.2,26.3c0,38.6,31.4,70,70,70c38.6,0,70-31.4,70-70c0-9.3-1.9-18.2-5.2-26.3H-40V479.5z"/>
+</svg>`
+    },
+    {
+        name: 'youtube',
+        url: 'https://www.youtube.com/@spell.pierce',
+        color: 'var(--ctp-sky)',
+        icon: `<svg fill="#ffffff" width="800px" height="800px" viewBox="0 -3 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <title>youtube [#168]</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+
+</defs>
+    <g id="Page-1" stroke-width="1" fill-rule="evenodd">
+        <g id="Dribbble-Light-Preview" transform="translate(-300.000000, -7442.000000)" fill="#000000">
+            <g fill="#ffffff" id="icons" transform="translate(56.000000, 160.000000)">
+                <path d="M251.988432,7291.58588 L251.988432,7285.97425 C253.980638,7286.91168 255.523602,7287.8172 257.348463,7288.79353 C255.843351,7289.62824 253.980638,7290.56468 251.988432,7291.58588 M263.090998,7283.18289 C262.747343,7282.73013 262.161634,7282.37809 261.538073,7282.26141 C259.705243,7281.91336 248.270974,7281.91237 246.439141,7282.26141 C245.939097,7282.35515 245.493839,7282.58153 245.111335,7282.93357 C243.49964,7284.42947 244.004664,7292.45151 244.393145,7293.75096 C244.556505,7294.31342 244.767679,7294.71931 245.033639,7294.98558 C245.376298,7295.33761 245.845463,7295.57995 246.384355,7295.68865 C247.893451,7296.0008 255.668037,7296.17532 261.506198,7295.73552 C262.044094,7295.64178 262.520231,7295.39147 262.895762,7295.02447 C264.385932,7293.53455 264.28433,7285.06174 263.090998,7283.18289" id="youtube-[#168]">
+
+</path>
+            </g>
+        </g>
+    </g>
+</svg>`
+    },
+    {
+        name: 'soundcloud',
+        url: 'https://soundcloud.com/spell-pierce',
+        color: 'var(--ctp-sapphire)',
+        icon: `<svg width="800px" height="800px" viewBox="0 -4.5 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+    <title>soundcloud [#164]</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+
+</defs>
+    <g fill="#ffffff" id="Page-1" stroke="none" stroke-width="1" fill="#none" fill-rule="evenodd">
+        <g id="Dribbble-Light-Preview" transform="translate(-60.000000, -7483.000000)" fill="#000000">
+            <g id="icons" transform="translate(56.000000, 160.000000)" fill="#ffffff">
+                <path d="M12.5857188,7333.74807 L12.5857188,7323.71968 C12.5857188,7323.40078 12.681671,7323.20964 12.8745748,7323.14824 C16.086973,7322.38863 19.3323547,7324.62982 19.6272077,7328.00596 C22.7676418,7326.67987 25.4982802,7330.67597 23.0644937,7333.07562 C22.4478012,7333.6837 21.7081701,7333.98774 20.8456002,7333.98774 L12.7526356,7333.97883 C12.6456889,7333.94317 12.5857188,7333.83225 12.5857188,7333.74807 L12.5857188,7333.74807 Z M10.4088043,7333.45294 C10.4088043,7334.17789 11.7861176,7334.1868 11.7861176,7333.45294 L11.7861176,7323.80485 C11.7861176,7322.89173 10.4088043,7322.8957 10.4088043,7323.80485 L10.4088043,7333.45294 L10.4088043,7333.45294 Z M8.26987088,7333.45294 C8.26987088,7334.16105 9.6461846,7334.18878 9.6461846,7333.45294 L9.6461846,7327.76629 C9.6461846,7326.85318 8.26987088,7326.85714 8.26987088,7327.76629 L8.26987088,7333.45294 L8.26987088,7333.45294 Z M6.13893345,7333.15782 C6.13893345,7333.88672 7.50725116,7333.89861 7.50725116,7333.15782 L7.50725116,7326.92746 C7.50725116,7326.04504 6.13893345,7326.03415 6.13893345,7326.92746 L6.13893345,7333.15782 Z M4,7332.01494 C4,7332.86566 5.3673182,7333.08057 5.3673182,7332.01494 L5.3673182,7329.34196 C5.3673182,7328.43677 4,7328.44469 4,7329.34196 L4,7332.01494 Z" id="soundcloud-[#164]">
+
+</path>
+            </g>
+        </g>
+    </g>
+</svg>`
+    }
+];
+---
+
+<section class="socials">
+    <div class="content">
+        <div class="social-links">
+            {
+                socials.map((social) => (
+                    <a
+                        href={social.url}
+                        class="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={`--social-color: ${social.color}`}
+                        aria-label={social.name}
+                    >
+                        <span class="social-icon" set:html={social.icon} />
+                    </a>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    .socials {
+        padding: 4rem 2rem 8rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content {
+        max-width: 600px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .social-links {
+        display: flex;
+        gap: 2rem;
+        justify-content: center;
+    }
+
+    .social-link {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--ctp-surface0);
+        border: 2px solid var(--social-color);
+        border-radius: 50%;
+        color: var(--social-color);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        text-decoration: none;
+    }
+
+    .social-icon {
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .social-icon :global(svg) {
+        width: 100%;
+        height: 100%;
+    }
+
+    .social-link:hover {
+        background-color: var(--social-color);
+        color: var(--ctp-base);
+        transform: translateY(-4px) rotate(5deg);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .social-link:active {
+        transform: translateY(-2px) rotate(5deg);
+    }
+
+    @media (max-width: 600px) {
+        .socials {
+            padding: 3rem 2rem 6rem;
+        }
+
+        .social-links {
+            gap: 1.5rem;
+        }
+
+        .social-link {
+            width: 56px;
+            height: 56px;
+        }
+
+        .social-icon {
+            width: 28px;
+            height: 28px;
+        }
+    }
+</style>
