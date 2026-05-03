@@ -1,6 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Intro from '../components/Intro.astro';
+import UpcomingRelease from '../components/UpcomingRelease.astro';
+import LatestRelease from '../components/LatestRelease.astro';
+import ReleaseArchive from '../components/ReleaseArchive.astro';
 import Projects from '../components/Projects.astro';
 import WaveDivider from '../components/WaveDivider.astro';
 import Webring from '../components/Webring.astro';
@@ -17,7 +20,27 @@ const variables = {
 <Layout title={variables.name}>
     <main>
         <Intro name={variables.name} subtitle={variables.subtitles} />
+        <Socials />
         <WaveDivider color="rosewater" speed={100} size={0.8} direction="left" />
+
+        <UpcomingRelease
+            title="Friend of the Lonely"
+            artist="spell pierce"
+            releaseDate="2026-05-14"
+            coverSrc="/images/releases/friend-of-the-lonely-512.png"
+            coverSrc2x="/images/releases/friend-of-the-lonely-1024.png"
+        />
+        <WaveDivider color="mauve" speed={100} size={0.8} direction="right" />
+
+        <LatestRelease
+            title="Phoenix Inside (april 2026 demo version)"
+            artist="spell pierce"
+            releaseDate="2026-05-02"
+            youtubeId="uID9bNYEoDs"
+        />
+        <WaveDivider color="blue" speed={100} size={0.8} direction="left" />
+
+        <ReleaseArchive />
 
         <!-- <Projects />
         <WaveDivider color="flamingo" speed={100} size={0.8} direction="right" /> -->
@@ -27,7 +50,5 @@ const variables = {
 
         <!-- <Webring />
         <WaveDivider color="pink" speed={100} size={0.8} direction="right" /> -->
-
-        <Socials />
     </main>
 </Layout>
