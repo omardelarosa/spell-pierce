@@ -2,11 +2,17 @@
 type Release = {
     date: string;
     title: string;
-    youtubeId: string;
+    youtubeId?: string;
+    spotifyUrl?: string;
 };
+
+const releaseHref = (r: Release): string =>
+    r.spotifyUrl ?? (r.youtubeId ? `https://www.youtube.com/watch?v=${r.youtubeId}` : '#');
 
 const releases: Record<string, Release[]> = {
     '2026': [
+        { date: '2026-05-27', title: 'know nothing (may 2026 demo)', youtubeId: 'D4aOTEZN9Sk' },
+        { date: '2026-05-14', title: 'friend of the lonely', spotifyUrl: 'https://open.spotify.com/album/5nsKOEH0xIKUGJWNITHcee' },
         { date: '2026-05-02', title: 'phoenix inside (april 2026 demo)', youtubeId: 'uID9bNYEoDs' }
     ],
     '2025': [
@@ -47,7 +53,7 @@ const formatMMDD = (iso: string) => iso.slice(5);
                             .sort((a, b) => b.date.localeCompare(a.date))
                             .map((r) => (
                                 <li>
-                                    <a class="release-link" href={`https://www.youtube.com/watch?v=${r.youtubeId}`} target="_blank" rel="noopener noreferrer">
+                                    <a class="release-link" href={releaseHref(r)} target="_blank" rel="noopener noreferrer">
                                         <span class="release-date">{formatMMDD(r.date)}</span>
                                         <span class="release-title">{r.title}</span>
                                     </a>
@@ -62,7 +68,7 @@ const formatMMDD = (iso: string) => iso.slice(5);
 
 <style>
     .release-archive {
-        padding: 1rem 2rem;
+        padding: 1rem 2rem 3rem;
         display: flex;
         justify-content: center;
     }
@@ -186,7 +192,7 @@ const formatMMDD = (iso: string) => iso.slice(5);
 
     @media (max-width: 600px) {
         .release-archive {
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1.5rem 2.5rem;
         }
 
         .section-title {

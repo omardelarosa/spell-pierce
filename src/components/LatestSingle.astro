@@ -1,0 +1,83 @@
+---
+interface Props {
+    spotifyId: string;
+    spotifyType?: 'album' | 'track';
+    title?: string;
+}
+
+const { spotifyId, spotifyType = 'album', title = 'Latest single' } = Astro.props;
+
+const embedUrl = `https://open.spotify.com/embed/${spotifyType}/${spotifyId}?utm_source=generator`;
+---
+
+<section class="latest-single">
+    <div class="content">
+        <p class="eyebrow">Latest single — on Spotify</p>
+        <div class="card">
+            <iframe
+                class="spotify"
+                src={embedUrl}
+                title={title}
+                width="100%"
+                height="352"
+                frameborder="0"
+                loading="lazy"
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                allowfullscreen
+            ></iframe>
+        </div>
+    </div>
+</section>
+
+<style>
+    .latest-single {
+        padding: 2rem 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .content {
+        max-width: 600px;
+        width: 100%;
+    }
+
+    .eyebrow {
+        text-align: center;
+        font-size: 0.85rem;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--ctp-green);
+        margin-bottom: 1.5rem;
+        opacity: 0.9;
+    }
+
+    .card {
+        padding: 1.5rem;
+        background-color: var(--ctp-surface0);
+        border: 2px solid var(--ctp-green);
+        border-radius: 16px;
+        transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+        transform: translateY(-4px);
+    }
+
+    .spotify {
+        display: block;
+        width: 100%;
+        border: 0;
+        border-radius: 12px;
+        background-color: #000;
+    }
+
+    @media (max-width: 600px) {
+        .latest-single {
+            padding: 1.5rem 2rem;
+        }
+
+        .card {
+            padding: 1.25rem;
+        }
+    }
+</style>
