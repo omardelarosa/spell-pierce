@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Intro from '../components/Intro.astro';
 import UpcomingRelease from '../components/UpcomingRelease.astro';
+import LatestSingle from '../components/LatestSingle.astro';
 import LatestRelease from '../components/LatestRelease.astro';
 import ReleaseArchive from '../components/ReleaseArchive.astro';
 import Projects from '../components/Projects.astro';
@@ -24,13 +25,16 @@ const variables = {
         <WaveDivider color="rosewater" speed={100} size={0.8} direction="left" />
 
         <UpcomingRelease
-            title="Friend of the Lonely"
+            title="Phase"
             artist="spell pierce"
-            releaseDate="2026-05-14"
-            coverSrc="/images/releases/friend-of-the-lonely-512.png"
-            coverSrc2x="/images/releases/friend-of-the-lonely-1024.png"
+            releaseDate="2026-06-17"
+            coverSrc="/images/releases/phase-512.png"
+            coverSrc2x="/images/releases/phase-1024.png"
         />
         <WaveDivider color="mauve" speed={100} size={0.8} direction="right" />
+
+        <LatestSingle spotifyId="5nsKOEH0xIKUGJWNITHcee" title="Friend of the Lonely — spell pierce" />
+        <WaveDivider color="green" speed={100} size={0.8} direction="left" />
 
         <LatestRelease
             title="know nothing (may 2026 demo)"
