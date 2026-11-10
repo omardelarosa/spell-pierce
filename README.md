@@ -6,44 +6,32 @@ This is a static site for my music build using Astro.
 
 All commands are run from the root of the project, from a terminal:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## Deploying to Netlify
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-templates/astro-platform-starter)
+| Command              | Action                                           |
+| :------------------- | :----------------------------------------------- |
+| `pnpm install`       | Installs dependencies                            |
+| `pnpm dev`           | Starts local dev server at `localhost:4321`      |
+| `pnpm build`         | Build your production site to `./dist/`          |
+| `pnpm preview`       | Preview your build locally, before deploying     |
+| `pnpm astro ...`     | Run CLI commands like `astro add`, `astro check` |
+| `pnpm astro --help`  | Get help using the Astro CLI                     |
 
 ## Developing Locally
 
-| Prerequisites                                                                |
-| :--------------------------------------------------------------------------- |
-| [Node.js](https://nodejs.org/) v18.14+.                                      |
-| (optional) [nvm](https://github.com/nvm-sh/nvm) for Node version management. |
+| Prerequisites                                                                         |
+| :------------------------------------------------------------------------------------ |
+| [Node.js](https://nodejs.org/) 24 LTS (pinned in `.nvmrc` — run `nvm use`).           |
+| [pnpm](https://pnpm.io/installation) — the exact version is pinned in `package.json`. |
 
-1. Clone this repository, then run `npm install` in its root directory.
+1. Run `nvm use`, then `pnpm install` in the project root.
+2. Run `pnpm dev` and visit [localhost:4321](http://localhost:4321).
 
-2. For the starter to have full functionality locally (e.g. edge functions, blob store), please ensure you have an up-to-date version of Netlify CLI. Run:
+## Dependency security
 
-```
-npm install netlify-cli@latest -g
-```
+`pnpm-workspace.yaml` hardens installs:
 
-3. Link your local repository to the deployed Netlify site. This will ensure you're using the same runtime version for both local development and your deployed site.
+- **`minimumReleaseAge`**: versions published less than 7 days ago are not installed.
+- **`trustPolicy: no-downgrade`**: installs fail if a version has weaker publish provenance than earlier releases. Hand-reviewed false positives are listed by exact version in `trustPolicyExclude`, with a note on why.
+- **`allowBuilds`**: dependency install scripts only run for packages listed here.
+- **`blockExoticSubdeps`**: transitive dependencies must come from the npm registry.
 
-```
-netlify link
-```
-
-4. Then, run the Astro.js development server via Netlify CLI:
-
-```
-netlify dev
-```
-
-If your browser doesn't navigate to the site automatically, visit [localhost:8888](http://localhost:8888).
+If an install fails on one of these checks, review the package before adding an exception.

@@ -1,9 +1,37 @@
 ---
-
+const year = new Date().getFullYear();
 ---
 
-<footer class="pt-16 pb-12 sm:pt-24 sm:pb-16">
-    <p class="text-sm">
-        <a href="https://docs.netlify.com/frameworks/astro/" class="decoration-dashed text-primary underline-offset-8"> Astro on Netlify </a>
+<footer class="site-footer">
+    <p class="copy">
+        © {year}{' '}
+        <a href="https://omardelarosa.com" target="_blank" rel="noopener noreferrer">omar delarosa</a>
     </p>
 </footer>
+
+<style>
+    .site-footer {
+        padding: 2rem 2rem 2.5rem;
+        display: flex;
+        justify-content: center;
+        color: var(--ctp-overlay1);
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+    }
+
+    .copy {
+        margin: 0;
+    }
+
+    .copy a {
+        color: var(--ctp-mauve);
+        text-decoration: none;
+        transition: color 0.15s ease;
+    }
+
+    .copy a:hover,
+    .copy a:focus-visible {
+        color: var(--ctp-text);
+        text-decoration: underline;
+    }
+</style>
