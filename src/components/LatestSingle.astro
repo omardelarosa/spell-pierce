@@ -1,18 +1,19 @@
 ---
 interface Props {
     spotifyId: string;
-    spotifyType?: 'album' | 'track';
+    spotifyType?: 'album' | 'track' | 'playlist';
     title?: string;
+    eyebrow?: string;
 }
 
-const { spotifyId, spotifyType = 'album', title = 'Latest single' } = Astro.props;
+const { spotifyId, spotifyType = 'album', title = 'Latest single', eyebrow = 'Latest single — on Spotify' } = Astro.props;
 
 const embedUrl = `https://open.spotify.com/embed/${spotifyType}/${spotifyId}?utm_source=generator`;
 ---
 
 <section class="latest-single">
     <div class="content">
-        <p class="eyebrow">Latest single — on Spotify</p>
+        <p class="eyebrow">{eyebrow}</p>
         <div class="card">
             <iframe
                 class="spotify"

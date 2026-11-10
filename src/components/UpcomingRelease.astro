@@ -5,9 +5,13 @@ interface Props {
     releaseDate: string;
     coverSrc: string;
     coverSrc2x?: string;
+    href?: string;
 }
 
-const { title, artist, releaseDate, coverSrc, coverSrc2x } = Astro.props;
+const { title, artist, releaseDate, coverSrc, coverSrc2x, href } = Astro.props;
+
+const Tag = href ? 'a' : 'div';
+const linkProps = href ? { href, target: '_blank', rel: 'noopener noreferrer' } : {};
 
 const date = new Date(releaseDate + 'T00:00:00');
 const formattedDate = date.toLocaleDateString('en-US', {
@@ -20,7 +24,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
 <section class="upcoming-release">
     <div class="content">
         <p class="eyebrow">New single — coming {formattedDate}</p>
-        <div class="release">
+        <Tag class="release" {...linkProps}>
             <div class="cover-wrap">
                 <img
                     class="cover"
@@ -38,7 +42,7 @@ const formattedDate = date.toLocaleDateString('en-US', {
                     {formattedDate}
                 </p>
             </div>
-        </div>
+        </Tag>
     </div>
 </section>
 
@@ -75,8 +79,18 @@ const formattedDate = date.toLocaleDateString('en-US', {
         transition: transform 0.3s ease;
     }
 
+    a.release {
+        color: inherit;
+        text-decoration: none;
+    }
+
     .release:hover {
         transform: translateY(-4px);
+    }
+
+    a.release:focus-visible {
+        outline: 2px solid var(--ctp-mauve);
+        outline-offset: 4px;
     }
 
     .cover-wrap {
